@@ -31,6 +31,29 @@ function DOMtoString(document_root) {
     return html;
 }
 
+// document.body.innerHTML = document.body.innerHTML.replace(/颜色分类/g,"Thể loại màu:");
+// document.body.innerHTML = document.body.innerHTML.replace(/尺寸/g,"Kích thước:");
+// document.body.innerHTML = document.body.innerHTML.replace(/月销量/g,"Luong hang ban trong mot thang:");
+// document.body.innerHTML = document.body.innerHTML.replace(/数量/g,"Số lượng:");
+function translateTauKhuaToViewnamese(element) {
+    console.log("assdfd");
+    switch (element.innerHTML) {
+        case "颜色分类":
+            element.innerHTML = "Thể loại màu:";
+        case "尺寸":
+            element.innerHTML = "Kích thước:";
+        case "月销量":
+            element.innerHTML = "Luong hang ban trong mot thang:";
+        case "数量":
+            element.innerHTML = "Số lượng:";
+    }
+}
+
+var node = document.querySelectorAll('.tb-metatit');//static node
+Array.prototype.slice.call(node).map(translateTauKhuaToViewnamese);// turn it into an array then loop through them and check the name
+
+
+
 chrome.runtime.sendMessage({
     action: "getSource",
     source: DOMtoString(document.querySelector('.tm-price').innerHTML="<span class='tm-price'>" +
