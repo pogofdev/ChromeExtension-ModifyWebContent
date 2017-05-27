@@ -17,7 +17,7 @@
   "content_scripts": [
     {
       "matches": ["https://world.tmall.com/item/*"],
-      "css": ["bootstrap.min.css"],
+      "css": ["bootstrap.min.css", "styles.css"],
       "js": ["content.js", "jquery.min.js"]
     }
   ]

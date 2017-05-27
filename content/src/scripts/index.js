@@ -4,6 +4,7 @@ import $ from 'jquery';
 import  { Provider } from 'react-redux';
 import { Store } from 'react-chrome-redux';
 import App from './components/app/App';
+import FooterPanel from './components/footer_panel';
 import { translateChineseToVietnamese } from './GlobalLization'
 
 
@@ -29,7 +30,7 @@ translateChineseToVietnamese(node);
 
 render(
     <Provider store={proxyStore}>
-        <App/>
+        <FooterPanel/>
     </Provider>
     , document.getElementById('rcr-anchor')
 );

@@ -5,7 +5,6 @@ import { userClick } from '../../actions';
 import Button from '../Button';
 import $ from 'jquery';
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -27,20 +26,11 @@ class App extends Component {
 
     };
 
-    componentDidMount() {
-        ReactDOM.findDOMNode(this).addEventListener('click', this.handleOnclick.bind(this));
-    }
 
-    comporntWillUnmount() {
-      ReactDOM.findDOMNode(this).removeEventListener('click', this.handleOnclick.bind(this));
-    }
 
   render() {
     return (
-
-              <button className="btn btn-default btn-lg"> shopping cart</button>
-
-
+        <Button title="Shopping cart" onClick={this.handleOnclick.bind(this)}/>
     );
   }
 }
@@ -54,7 +44,4 @@ const mapStateToProps = ({testCount}) => {
     return {counter: 0};
 }
 
-
 export default connect(mapStateToProps, {userClick})(App);
-
-

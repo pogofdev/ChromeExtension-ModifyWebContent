@@ -55,6 +55,11 @@ gulp.task('copy-bootstrap', ['clean'], () => {
         .pipe(gulp.dest('./build'));
 });
 
+gulp.task('copy-styles', ['clean'], () => {
+    return gulp.src('styles.css')
+        .pipe(gulp.dest('./build'));
+});
+
 gulp.task('copy-jquery', ['clean'], () => {
     return gulp.src('jquery.min.js')
         .pipe(gulp.dest('./build'));
@@ -64,7 +69,7 @@ gulp.task('clean', (cb) => {
   rimraf('./build', cb);
 });
 
-gulp.task('build', ['copy-manifest', 'copy-jquery', 'copy-bootstrap', 'popup-js', 'popup-html', 'event-js', 'content-js']);
+gulp.task('build', ['copy-manifest', 'copy-styles', 'copy-jquery', 'copy-bootstrap', 'popup-js', 'popup-html', 'event-js', 'content-js']);
 
 gulp.task('watch', ['default'], () => {
   gulp.watch('popup/**/*', ['build']);

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-class Button extends Component {
+class FooterPanel extends Component {
     constructor(props) {
         super(props);
     }
@@ -16,14 +16,9 @@ class Button extends Component {
 
     render() {
         return(
-            <button
-                className="btn btn-default btn-lg"
-                onclick={this.props.onClick}
-            >
-                {this.props.title}
-            </button>
+            <div className="stickyFooter">fdsfd</div>
         );
     }
 };
 
-export default Button;
+export default FooterPanel;
