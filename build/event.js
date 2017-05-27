@@ -1235,19 +1235,24 @@ Object.defineProperty(exports, "__esModule", {
 
 var _types = __webpack_require__(25);
 
-var initialState = 0; /**
-                       * Created by poiso on 26/05/2017.
-                       */
+var initialState = { counter: 0 }; /**
+                                    * Created by poiso on 26/05/2017.
+                                    */
 
 exports.default = function () {
     var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
     var action = arguments[1];
-
+    ;
     switch (action.type) {
         case _types.ADD_COUNT:
-            return state + (action.payload || 1);
+            // return state + (action.payload || 1);
+            return Object.assign({}, state, {
+                counter: state.counter + 1
+            });
+        // return {counter: 'testtset'};
+
         default:
-            return state + 1;
+            return state;
     }
 };
 
